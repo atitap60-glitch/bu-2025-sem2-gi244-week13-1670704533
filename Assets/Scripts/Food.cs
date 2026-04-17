@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Food : MonoBehaviour
@@ -10,6 +11,8 @@ public class Food : MonoBehaviour
         {
             health.TakeDamage(attackPoint);
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        ProjectileObjectPool.StaticInstance.Return(this.gameObject);
     }
+    
 }

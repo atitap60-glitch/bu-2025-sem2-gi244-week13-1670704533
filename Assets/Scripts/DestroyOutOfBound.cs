@@ -13,6 +13,7 @@ public class DestroyOutOfBound : MonoBehaviour
         if (transform.position.z > topBound)
         {
             Destroy(gameObject);
+            ProjectileObjectPool.StaticInstance.Return(this.gameObject);
         }
         else if (transform.position.z < lowerBound)
         {
